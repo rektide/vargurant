@@ -15,3 +15,24 @@
   * Install cygwin: `cygwin -P python-paramiko -P openssh -q -L .`
   Manual:
   * `cygwin -P python-paramiko -P openssh` and complete manually
+* Configure for vagrant-windows https://github.com/WinRb/vagrant-windows/tree/vagrant-1.2#all-windows-machines
+* File -> Export Appliance and save inside the winbase folder as "box.ovf"
+* `../createbox` from inside winbase
+* `vagrant box add winbase winbase.box` to add newly created box
+* Follow Vagrant-Windows instructions for configuring machine to run
+
+== Vagrant-Windows Instructions ==
+
+Requires: bundler
+
+* `git clone https://github.com/WinRb/vagrant-windows`
+* change into directory
+* `git checkout vagrant-1.2`
+* `bundle install`
+* `rake build`
+* `vagrant plugin install pkg/vagrant-windows-1.2.0.gem`
+
+= Other helpfuls =
+
+https://github.com/dergachev/vagrant-vbox-snapshot
+`vagrant plugin install vagrant-vbox-snapshot`

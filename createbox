@@ -1,0 +1,20 @@
+#!/bin/sh
+
+NAME=${1-$(basename $(pwd))}
+REST=
+LEVEL=-9
+GZ=gzip
+MANIFEST=box.mf
+if [ -n "$2" ] ; then
+	shift
+	REST=$@
+	LEVEL=
+fi
+if hash pigz ; then
+	GZ=pigz
+fi
+if [ ! -f "$MANIFEST" ] ; then
+	MANIFEST=
+fi
+#tar cf - $MANIFEST Vagrantfile.pkg metadata.json box.ovf box*.vmdk|$GZ $REST $LEVEL > ${NAME}.tar.gz
+tar cf $NAME.box $MANIFEST Vagrantfile.pkg metadata.json box.ovf box*.vmdk

@@ -1,4 +1,9 @@
-Vagrant::Config.run do |config|
-	# Forward apache
-	config.vm.forward_port 80, 8080
+Vagrant.configure("2") do |config|
+	# Forward www to 8080
+	config.vm.guest = :windows
+	config.windows.halt_timeout = 15
+	config.winrm.username = "demo"
+	config.winrm.password = "demopass"
+	config.vm.network :forwarded_port, guest: 80, host: 8080
+	config.vm.network :forwarded_port, guest: 5985, host: 5985
 end
