@@ -1,12 +1,12 @@
-= Vargurant =
+# Vargurant #
 
 `Vargurant` is a Vagrant support repository.
 
-= winbase =
+# winbase #
 
 `winbase` aids in setting up Windows boxes. It relies on a bare image + Cygwin, and uses Ansible provisioning by way of Vagrant to set up a box. This bootstrap ought then be packaged, and used as a box.
 
-== Winbase Instructions ==
+## Winbase Install ##
 
 * Install a bare Windows vm into Virtualbox. I opted for a .vmdk format image.
 * Download cygwin; http://www.cygwin.com/setup.exe
@@ -16,14 +16,17 @@
   Manual:
   * `cygwin -P python-paramiko -P openssh` and complete manually
 * Configure for vagrant-windows https://github.com/WinRb/vagrant-windows/tree/vagrant-1.2#all-windows-machines
+
+## Winbase Appliance Export; box.ovf & box.vmdk ##
+
 * File -> Export Appliance and save inside the winbase folder as "box.ovf"
 * `../createbox` from inside winbase
 * `vagrant box add winbase winbase.box` to add newly created box
 * Follow Vagrant-Windows instructions for configuring machine to run
 
-== Vagrant-Windows Instructions ==
+## Vagrant-Windows Instructions ##
 
-Requires: bundler
+Requires: bundler,rake
 
 * `git clone https://github.com/WinRb/vagrant-windows`
 * change into directory
@@ -32,7 +35,7 @@ Requires: bundler
 * `rake build`
 * `vagrant plugin install pkg/vagrant-windows-1.2.0.gem`
 
-= Other helpfuls =
+# Other helpfuls #
 
 https://github.com/dergachev/vagrant-vbox-snapshot
 `vagrant plugin install vagrant-vbox-snapshot`
