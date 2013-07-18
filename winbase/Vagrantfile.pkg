@@ -1,9 +1,18 @@
+Vagrant.require_plugin "vagrant-windows"
+
 Vagrant.configure("2") do |config|
 	# Forward www to 8080
 	config.vm.guest = :windows
 	config.windows.halt_timeout = 15
 	config.winrm.username = "demo"
 	config.winrm.password = "demopass"
+	config.vm.provider :virtualbox do |vb|
+		vb.customize ["modifyvm", :id, "--vrde", "on"]
+		vb.customize ["modifyvm", :id, "--vrdeport", "3389"]
+		vb.customize ["modifyvm", :id, "--vrdeauthtype", "external"]
+		vb.customize ["modifyvm", :id, "--vrdemulticon", "on"]
+	end
+	config.vm.base_mac = "0a0b27333333"
 	config.vm.network :forwarded_port, guest: 80, host: 8080
 	config.vm.network :forwarded_port, guest: 5985, host: 5985
 end
