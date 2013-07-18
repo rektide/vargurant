@@ -16,6 +16,8 @@
   Manual:
   * `cygwin -P python-paramiko -P openssh` and complete manually
 * Open Cygwin terminal as admin, `ssh-host-config --yes -w asecretsshmasterpassword --cygwin ntsec`
+* Schedule sshd to start, `cygrunsrv -S sshd`
+* Open a firewall port for 22 in Windows. Probably open ping too.
 * Configure for vagrant-windows https://github.com/WinRb/vagrant-windows/tree/vagrant-1.2#all-windows-machines
   * UAC settings
   * winrm settings
