@@ -1,2 +1,15 @@
-vim,git,screen,zsh,git-completion,curl,wget,elinks,w3m,gvim,unzip,zip
-
+vim
+git
+screen
+zsh
+git-completion
+curl
+wget
+elinks
+w3m
+gvim
+unzip
+zip
+automate
+automake1.9
+gcc
