@@ -1,6 +1,12 @@
 # Vargurant #
 
-`Vargurant` is a Vagrant support repository.
+`Vargurant` is a [Vagrant][vagrant] support repository.
+[vagrant]: http://www.vagrantup.com/
+
+![Vargur Marauder][vargur-image]
+[vargur-image]: https://raw.github.com/rektide/vargurant/master/vargur.png "Vargur"
+The [Vargur Marauder Battleship][vargur-wiki], EVE Online
+[vargur-wiki]: http://www.eve-wiki.net/index.php?title=Vargur "Vargur Marauder"
 
 # winbase #
 
