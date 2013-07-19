@@ -19,6 +19,7 @@ The [Vargur Marauder Battleship][vargur-wiki], EVE Online
 * Cygwin install can be done two ways, manually or automated. First, automated:
   * Fetch cygwin: `cygwin -P python-paramiko -P openssh -q -D`
   * Install cygwin: `cygwin -P python-paramiko -P openssh -q -L .`
+  
   Manual:
   * `cygwin -P python-paramiko -P openssh` and complete manually
 * Open Cygwin terminal as admin, `ssh-host-config --yes -w asecretsshmasterpassword --cygwin ntsec`
